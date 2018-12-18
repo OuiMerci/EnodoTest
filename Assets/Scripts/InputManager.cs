@@ -12,9 +12,6 @@ public class InputManager : MonoBehaviour {
     private CameraMovement _cam;
     #endregion
 
-    #region properties
-    #endregion
-
     #region Methods
     private void Start()
     {
@@ -36,7 +33,7 @@ public class InputManager : MonoBehaviour {
     {
         if (Input.GetButtonDown("Reset"))
         {
-            _drawingTool.ResetDrawingTool(false);
+            _drawingTool.ResetDrawingTool();
         }
     }
 

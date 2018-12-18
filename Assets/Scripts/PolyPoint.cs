@@ -73,14 +73,19 @@ public class PolyPoint : MonoBehaviour {
     {
         _linkedPolygons.Remove(poly);
 
-        if (_linkedPolygons.Count < 1)
-            Cadastre.Instance.PointsPool.AddToPool(this);
+        CheckLinkedPolygonsCount();
     }
 
     public void AddLinkedPolygon(Polygon poly)
     {
         if(_linkedPolygons.Contains(poly) == false)
             _linkedPolygons.Add(poly);
+    }
+
+    public void CheckLinkedPolygonsCount()
+    {
+        if (_linkedPolygons.Count < 1)
+            Cadastre.Instance.PointsPool.AddToPool(this);
     }
     #endregion
 }

@@ -167,7 +167,8 @@ public class Polygon : MonoBehaviour {
 
     public void BuildingGrow()
     {
-        _building.Grow();
+        if(_building!=null)
+            _building.Grow();
     }
     #endregion
 }

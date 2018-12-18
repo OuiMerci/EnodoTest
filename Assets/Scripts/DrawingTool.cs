@@ -243,15 +243,11 @@ public class DrawingTool : MonoBehaviour {
         _line.SetPositions(_linePositionList.ToArray());
     }
 
-    public void ResetDrawingTool(bool keepPoints = true)
+    public void ResetDrawingTool()
     {
-        if (keepPoints == false)
+        foreach (PolyPoint point in _pointList)
         {
-            // Send points back to pool
-            foreach (PolyPoint point in _pointList)
-            {
-                _pointsPool.AddToPool(point);
-            }
+            point.CheckLinkedPolygonsCount(); // If this point is used by another polygon, it will stay, otherwhise it will be sent back to the pool
         }
 
         _pointList.Clear();

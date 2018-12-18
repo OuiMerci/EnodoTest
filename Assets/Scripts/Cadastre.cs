@@ -142,7 +142,7 @@ public class Cadastre : MonoBehaviour {
                 return true;
             }
         }
-        return result;
+        return false;
     }
     #endregion
 }
